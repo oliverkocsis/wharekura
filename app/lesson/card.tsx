@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'; 
+import Image from 'next/image';
 
 interface Properties {
     src: string,
@@ -8,10 +8,8 @@ interface Properties {
 
 const Card = (props: Properties) => {
     return (
-        <div className="flex justify-center">
-            <div className="w-32 h-32 mr-4 border border-gray-300 rounded-lg bg-white rounded-lg shadow-md p-4 overflow-hidden">
-                <Image src={props.src} alt={props.alt} /> 
-            </div>
+        <div className="border border-gray-200 rounded shadow flex justify-center">
+            <Image src={props.src} alt={props.alt} />
         </div>
     );
 };
