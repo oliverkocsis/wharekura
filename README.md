@@ -34,3 +34,10 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+# Tools
+
+Create audio files
+1. Update the `data` in `tools/text-to-speech.js`
+1. Then run `npm run text-to-speech`
+
