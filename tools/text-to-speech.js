@@ -3,8 +3,8 @@ const path = require("path");
 const OpenAI = require("openai");
 
 const data = {
-  en: "the boy drinks",
-  nl: "het jongen drinkt",
+  en: "the girl eats",
+  nl: "Het meisje eet.",
 };
 
 const openai = new OpenAI();
