@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Card from './card';
-import sound_icon from './../../public/images/icons8-sound-100.png';
+import sound_icon from './../../public/image/icons8-sound-100.png';
 
 interface Properties {
     description: string,
@@ -14,7 +14,7 @@ export const Learn = (props: Properties) => {
 
     useEffect(() => {
         audio.src = props.audio;
-        audio.playbackRate = 0.8;
+        audio.playbackRate = 1.0;
         audio.play();
     }, [props.audio]);
 

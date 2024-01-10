@@ -3,13 +3,13 @@ const path = require("path");
 const OpenAI = require("openai");
 
 const data = {
-  en: "the girl eats",
-  nl: "Het meisje eet.",
+  filename: "040890b5-d93f-4dcf-945b-b678e1ba06c9",
+  nl: "de appel",
 };
 
 const openai = new OpenAI();
 
-const speechFile = path.resolve(`./public/audio/${data.en}.aac`);
+const speechFile = path.resolve(`./public/audio/${data.filename}.aac`);
 
 async function main() {
   const audio = await openai.audio.speech.create({
@@ -19,7 +19,6 @@ async function main() {
     response_format: "aac",
     speed: 1,
     input: data.nl,
-
   });
   console.log(speechFile);
   const buffer = Buffer.from(await audio.arrayBuffer());
