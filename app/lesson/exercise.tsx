@@ -31,7 +31,7 @@ export const Learn = (props: Properties) => {
 
     return (
         <div className="grid grid-cols-1 gap-4" onClick={playAudio}>
-            <h2 className="w-full text-center flex items-center justify-center">
+            <h2 className="w-full text-center flex items-center justify-center text-2xl">
                 {props.description}
             </h2>
             <div className="border border-gray-200 rounded shadow flex justify-center p-4">
