@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Card from './card';
-import sound_icon from './../../public/image/icons8-sound-100.png';
+import sound_icon from '/public/image/icons8-sound-100.png';
 
 interface Properties {
     description: string,
@@ -11,19 +10,24 @@ interface Properties {
 
 export const Learn = (props: Properties) => {
     const audioRef = useRef<HTMLAudioElement>(null);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
-        if (audioRef.current) {
+        if (audioRef.current && imageLoaded) {
             audioRef.current.src = props.audio;
             audioRef.current.playbackRate = 1.0;
             audioRef.current.play();
         }
-    }, [props.audio]);
+    }, [props.description, props.image, props.audio, imageLoaded]);
 
     const playAudio = () => {
         if (audioRef.current) {
             audioRef.current.play();
         }
+    };
+
+    const handleImageLoad = () => {
+        setImageLoaded(true);
     };
 
     return (
@@ -32,10 +36,19 @@ export const Learn = (props: Properties) => {
                 {props.description}
                 <Image className="w-5 h-5 ml-2" src={sound_icon} alt="play sound" />
             </h2>
-            <Card src={props.image} alt={props.description} />
+            <div className="border border-gray-200 rounded shadow flex justify-center p-4">
+                <Image
+                    src={props.image}
+                    alt={props.description}
+                    className={'h-[50vh] w-auto'}
+                    height={500}
+                    width={500}
+                    onLoad={handleImageLoad}
+                />
+            </div>
             <audio ref={audioRef} className="hidden" />
         </div>
-    )
+    );
 }
 
 export const Select = (props: Properties[]) => {
@@ -43,8 +56,12 @@ export const Select = (props: Properties[]) => {
         <div className="grid grid-cols-2 gap-4">
             <h2 className="w-full text-center">{props[0].description}</h2>
             <h2 className="w-full text-center">{props[1].description}</h2>
-            <Card src={props[0].image} alt={props[0].description} />
-            <Card src={props[1].image} alt={props[1].description} />
+            <div className="border border-gray-200 rounded shadow flex justify-center p-4">
+                <Image src={props[0].image} alt={props[0].description} className="h-[50vh] w-auto" height={500} width={500} />
+            </div>
+            <div className="border border-gray-200 rounded shadow flex justify-center p-4">
+                <Image src={props[1].image} alt={props[1].description} className="h-[50vh] w-auto" height={500} width={500} />
+            </div>
         </div>
     )
 }
