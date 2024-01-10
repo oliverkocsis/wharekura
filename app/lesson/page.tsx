@@ -37,7 +37,7 @@ const Lesson = () => {
     };
 
     return (
-        <div className="container py-4">
+        <div className="container p-4" >
             <div className="max-w-screen-sm mx-auto">
                 <div className="grid grid-cols-1 gap-8">
                     <ProgressBar progress={100 / exercises.length * exerciseCounter + 1} />

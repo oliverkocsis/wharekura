@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import sound_icon from '/public/image/icons8-sound-100.png';
 
 interface Properties {
     description: string,
@@ -34,10 +33,10 @@ export const Learn = (props: Properties) => {
         <div className="grid grid-cols-1 gap-4" onClick={playAudio}>
             <h2 className="w-full text-center flex items-center justify-center">
                 {props.description}
-                <Image className="w-5 h-5 ml-2" src={sound_icon} alt="play sound" />
             </h2>
             <div className="border border-gray-200 rounded shadow flex justify-center p-4">
                 <Image
+                    priority={true}
                     src={props.image}
                     alt={props.description}
                     className={'h-[50vh] w-auto'}
