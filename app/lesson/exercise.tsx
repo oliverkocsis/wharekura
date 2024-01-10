@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Card from './card';
 import sound_icon from './../../public/image/icons8-sound-100.png';
@@ -10,16 +10,20 @@ interface Properties {
 }
 
 export const Learn = (props: Properties) => {
-    const [audio] = useState(new Audio(props.audio));
+    const audioRef = useRef<HTMLAudioElement>(null);
 
     useEffect(() => {
-        audio.src = props.audio;
-        audio.playbackRate = 1.0;
-        audio.play();
+        if (audioRef.current) {
+            audioRef.current.src = props.audio;
+            audioRef.current.playbackRate = 1.0;
+            audioRef.current.play();
+        }
     }, [props.audio]);
 
     const playAudio = () => {
-        audio.play();
+        if (audioRef.current) {
+            audioRef.current.play();
+        }
     };
 
     return (
@@ -29,6 +33,7 @@ export const Learn = (props: Properties) => {
                 <Image className="w-5 h-5 ml-2" src={sound_icon} alt="play sound" />
             </h2>
             <Card src={props.image} alt={props.description} />
+            <audio ref={audioRef} className="hidden" />
         </div>
     )
 }
