@@ -26,7 +26,7 @@ const Lesson = () => {
                 <div className="grid grid-cols-1 gap-8">
                     <ProgressBar progress={100 / exercises.length * exerciseCounter + 1} />
                     <Learn
-                        description={exercises[exerciseCounter].description}
+                        description={exercises[exerciseCounter].nl}
                         image={`/image/${exercises[exerciseCounter].id}.png`}
                         audio={`/audio/${exercises[exerciseCounter].id}.mp3`}
                     />
