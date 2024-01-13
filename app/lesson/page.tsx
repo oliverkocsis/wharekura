@@ -11,7 +11,7 @@ const Page = () => {
             {lessons.map((lesson, index) => (
                 <Link href={`lesson/${lesson.id}`} key={lesson.id}>
                     <div>
-                        <Image className="h-auto max-w-full rounded-lg" src={`/image/${lesson.id}.png`} alt={lesson.nl} height={500} width={500}/>
+                        <Image className="h-auto max-w-full rounded-lg border border-gray-400 shadow-md" src={`/${lesson.id}/_.png`} alt={lesson.nl} height={500} width={500}/>
                     </div>
                 </Link>
             ))}
