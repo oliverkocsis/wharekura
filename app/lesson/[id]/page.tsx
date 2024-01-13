@@ -5,14 +5,14 @@ import { useRouter } from 'next/navigation'
 import ProgressBar from '../../_components/progress-bar';
 import Exersice from './exercise';
 import Button from '../../_components/buttons';
-import { getExersices } from '../../_data/lessons';
+import { getExercises } from '../../_data/lessons';
 
 interface Properties {
     params: { id: string },
 }
 
 const Lesson = (props: Properties) => {
-    const exercises = getExersices(props.params.id);
+    const exercises = getExercises(props.params.id);
 
     const [exerciseCounter, setExerciseCounter] = useState(0);
 
@@ -31,8 +31,8 @@ const Lesson = (props: Properties) => {
             <ProgressBar progress={100 / exercises.length * exerciseCounter + 1} />
             <Exersice
                 description={exercises[exerciseCounter].nl}
-                image={`/image/${exercises[exerciseCounter].id}.png`}
-                audio={`/audio/${exercises[exerciseCounter].id}.mp3`}
+                image={`/${props.params.id}/${exercises[exerciseCounter].id}.png`}
+                audio={`/${props.params.id}/${exercises[exerciseCounter].id}.mp3`}
             />
             <Button onClick={handleNextStep}>Next</Button>
         </div>
