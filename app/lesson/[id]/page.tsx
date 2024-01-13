@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'
 import ProgressBar from '../../_components/progress-bar';
-import { Learn } from './exercise';
+import Exersice from './exercise';
 import Button from '../../_components/buttons';
 import { getExersices } from '../../_data/lessons';
 
@@ -29,7 +29,7 @@ const Lesson = (props: Properties) => {
     return (
         <div className="grid grid-cols-1 gap-8">
             <ProgressBar progress={100 / exercises.length * exerciseCounter + 1} />
-            <Learn
+            <Exersice
                 description={exercises[exerciseCounter].nl}
                 image={`/image/${exercises[exerciseCounter].id}.png`}
                 audio={`/audio/${exercises[exerciseCounter].id}.mp3`}

@@ -7,7 +7,7 @@ interface Properties {
     audio: string,
 }
 
-export const Learn = (props: Properties) => {
+export const Exersice = (props: Properties) => {
     const audioRef = useRef<HTMLAudioElement>(null);
     const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -50,17 +50,4 @@ export const Learn = (props: Properties) => {
     );
 }
 
-export const Select = (props: Properties[]) => {
-    return (
-        <div className="grid grid-cols-2 gap-4">
-            <h2 className="w-full text-center">{props[0].description}</h2>
-            <h2 className="w-full text-center">{props[1].description}</h2>
-            <div className="border border-gray-200 rounded shadow flex justify-center p-4">
-                <Image src={props[0].image} alt={props[0].description} className="h-[50vh] w-auto" height={500} width={500} />
-            </div>
-            <div className="border border-gray-200 rounded shadow flex justify-center p-4">
-                <Image src={props[1].image} alt={props[1].description} className="h-[50vh] w-auto" height={500} width={500} />
-            </div>
-        </div>
-    )
-}
+export default Exersice;
