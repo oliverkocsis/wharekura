@@ -3,8 +3,8 @@ import { getLessons } from '../_data/lessons'
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Page = () => {
-    const lessons = getLessons();
+export default async function Page() {
+    const lessons = await getLessons();
 
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -18,5 +18,3 @@ const Page = () => {
         </div>
     )
 }
-
-export default Page

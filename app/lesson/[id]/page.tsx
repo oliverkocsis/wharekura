@@ -8,6 +8,6 @@ interface Properties {
 export default async function Page(props: Properties) {
     const id = props.params.id;
     const exercises = await getExercises(id);
-   
+
     return <Container id={id} exercises={exercises} />;
-  }
+}
