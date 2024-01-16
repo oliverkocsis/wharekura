@@ -37,7 +37,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # Tools
 
-Create audio files
-1. Update the `data` in `tools/text-to-speech.js`
-1. Then run `npm run text-to-speech`
+## Firefly
 
+https://firefly.adobe.com/
+
+```
+Create a hand-drawn illustration of a _ as if drawn by a child. 
+The illustration should have simple features with minimal detail.
+Use gentle pastel tones to color the image and a light background, giving it a soft appearance that would appeal to children.
+```
+
+## Natural Readers
+
+https://www.naturalreaders.com/online/
